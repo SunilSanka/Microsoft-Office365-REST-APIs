@@ -1,0 +1,2481 @@
+{
+	"info": {
+		"_postman_id": "5a923546-f13e-402b-ae5f-dbeb1efdcd76",
+		"name": "Graph",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "Outlook Activity",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getEmailActivityUserDetail(date=2019-10-14)",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getEmailActivityUserDetail(date=2019-10-14)"
+									]
+								},
+								"description": "Get details about email activity users have performed."
+							},
+							"response": []
+						},
+						{
+							"name": "Get activity counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getEmailActivityCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getEmailActivityCounts(period='D7')"
+									]
+								},
+								"description": "Enables you to understand the trends of email activity (like how many were sent, read, and received) in your organization."
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getEmailActivityUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getEmailActivityUserCounts(period='D7')"
+									]
+								},
+								"description": "Enables you to understand the trends of email activity (like how many were sent, read, and received) in your organization."
+							},
+							"response": []
+						}
+					],
+					"description": "Use the email activity reports to get a high level view of email traffic within your organization. You can also drill into the Email Activity widget to understand the trends and details of the email activity per user in your organization.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Outlook app usage",
+					"item": [
+						{
+							"name": "Email  - Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getEmailAppUsageUserDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getEmailAppUsageUserDetail(period='D7')"
+									]
+								},
+								"description": "Get details about email activity users have performed."
+							},
+							"response": []
+						},
+						{
+							"name": "Email  - Get apps user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getEmailActivityCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getEmailActivityCounts(period='D7')"
+									]
+								},
+								"description": "Enables you to understand the trends of email activity (like how many were sent, read, and received) in your organization."
+							},
+							"response": []
+						},
+						{
+							"name": "Email  - Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getEmailAppUsageUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getEmailAppUsageUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the count of unique users that connected to Exchange Online using any email app."
+							},
+							"response": []
+						}
+					],
+					"description": "Use the email app usage reports to see how many email apps are used to connect to Exchange Online. You can also see which versions of Outlook apps are used which will enable you to follow up with users who should upgrade to supported Outlook versions.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Outlook mailbox usage",
+					"item": [
+						{
+							"name": "Get mailbox detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getMailboxUsageDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getMailboxUsageDetail(period='D7')"
+									]
+								},
+								"description": "Get details about mailbox usage."
+							},
+							"response": []
+						},
+						{
+							"name": "Get mailbox counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getMailboxUsageMailboxCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getMailboxUsageMailboxCounts(period='D7')"
+									]
+								},
+								"description": "Get the total number of user mailboxes in your organization and how many are active each day of the reporting period. A mailbox is considered active if the user sent or read any email."
+							},
+							"response": []
+						},
+						{
+							"name": "Get quota status mailbox counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getMailboxUsageQuotaStatusMailboxCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getMailboxUsageQuotaStatusMailboxCounts(period='D7')"
+									]
+								},
+								"description": "Get the count of user mailboxes in each quota category."
+							},
+							"response": []
+						},
+						{
+							"name": "Get storage",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getMailboxUsageStorage(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getMailboxUsageStorage(period='D7')"
+									]
+								},
+								"description": "Get the count of user mailboxes in each quota category."
+							},
+							"response": []
+						}
+					],
+					"description": "Use the mailbox usage reports to get information about users with a mailbox and their level of activity which is primarily based on emails sent and received. You can also see how much storage each mailbox consumes and how many mailboxes are approaching storage quotas.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Office 365 activations",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365ActivationsUserDetail",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365ActivationsUserDetail"
+									]
+								},
+								"description": "Get details about users who have activated Office 365.\n\nGET /reports/getOffice365ActivationsUserDetail"
+							},
+							"response": []
+						},
+						{
+							"name": "Get activation counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365ActivationCounts",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365ActivationCounts"
+									]
+								},
+								"description": "Get the count of Office 365 activations on desktops and devices.\n\nGET /reports/getOffice365ActivationCounts"
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365ActivationsUserCounts",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365ActivationsUserCounts"
+									]
+								},
+								"description": "Get the count of users that are enabled and those that have activated the Office subscription on desktop or devices or shared computers.\n\nGET /reports/getOffice365ActivationsUserCounts"
+							},
+							"response": []
+						}
+					],
+					"description": "The Office 365 activation reports can give you a view of which users have activated their Office 365 subscriptions on at least one device. These reports provide a breakdown of the Office 365 ProPlus, Project, and Visio Pro for Office 365 subscription activations, as well as the breakdown of activations across desktop and devices. These reports could help you identify users who might need additional support to activate their Office subscription.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Office 365 active users",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365ActiveUserDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365ActiveUserDetail(period='D7')"
+									]
+								},
+								"description": "Get details about Office 365 active users.\n\nGET /reports/getOffice365ActiveUserDetail(period='{period_value}')\nGET /reports/getOffice365ActiveUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365ActiveUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365ActiveUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the count of daily active users in the reporting period by product.\n\nGET /reports/getOffice365ActiveUserCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get services user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365ServicesUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365ServicesUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the count of users by activity type and service.\n\nGET /reports/getOffice365ServicesUserCounts(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the Office 365 active users reports to find out how many product licenses are being used by individuals in your organization, and drill down for information about which users are using what products. These reports can help administrators identify underutilized products or users that might need additional training or information.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Office 365 groups activity",
+					"item": [
+						{
+							"name": "Get group detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365GroupsActivityDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365GroupsActivityDetail(period='D7')"
+									]
+								},
+								"description": "Get details about Office 365 Groups activity by group.\n\nGET /reports/getOffice365GroupsActivityDetail(period='{period_value}')\nGET /reports/getOffice365GroupsActivityDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get activity counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365GroupsActivityCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365GroupsActivityCounts(period='D7')"
+									]
+								},
+								"description": "Get the number of group activities across group workloads."
+							},
+							"response": []
+						},
+						{
+							"name": "Get group counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365GroupsActivityGroupCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365GroupsActivityGroupCounts(period='D7')"
+									]
+								},
+								"description": "Get the daily total number of groups and how many of them were active based on email conversations, Yammer posts, and SharePoint file activities.\n\nGET /reports/getOffice365GroupsActivityGroupCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get storage",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365GroupsActivityStorage(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365GroupsActivityStorage(period='D7')"
+									]
+								},
+								"description": "Get the total storage used across all group mailboxes and group sites.\n\nGET /reports/getOffice365GroupsActivityStorage(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get file counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOffice365GroupsActivityFileCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOffice365GroupsActivityFileCounts(period='D7')"
+									]
+								},
+								"description": "Get the total number of files and how many of them were active across all group sites associated with an Office 365 Group\n\nGET /reports/getOffice365GroupsActivityFileCounts(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the Groups activity reports to gain insights into the activity of Office 365 Groups in your organization and see how many Office 365 Groups are being created and used.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "OneDrive activity",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOneDriveActivityUserDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOneDriveActivityUserDetail(period='D7')"
+									]
+								},
+								"description": "Get details about OneDrive activity by user.\n\nGET /reports/getOneDriveActivityUserDetail(period='{period_value}')\nGET /reports/getOneDriveActivityUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOneDriveActivityUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOneDriveActivityUserCounts(period='D7')"
+									]
+								},
+								"description": "Get details about OneDrive activity by user.\n\nGET /reports/getOneDriveActivityUserDetail(period='{period_value}')\nGET /reports/getOneDriveActivityUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get file counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOneDriveActivityFileCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOneDriveActivityFileCounts(period='D7')"
+									]
+								},
+								"description": "Get the number of unique, licensed users that performed file interactions against any OneDrive account.\n\nGET /reports/getOneDriveActivityFileCounts(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "Use the OneDrive activity reports to get the activity of every user licensed to use OneDrive by looking at their interaction with files on OneDrive. These reports can help you to understand the level of collaboration going on by showing the number of files shared.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "OneDrive usage ",
+					"item": [
+						{
+							"name": "Get account detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOneDriveUsageAccountDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOneDriveUsageAccountDetail(period='D7')"
+									]
+								},
+								"description": "Get details about OneDrive usage by account.\n\nGET /reports/getOneDriveUsageAccountDetail(period='{period_value}')\nGET /reports/getOneDriveUsageAccountDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get account counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOneDriveUsageAccountCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOneDriveUsageAccountCounts(period='D7')"
+									]
+								},
+								"description": "Get the trend in the number of active OneDrive for Business sites. Any site on which users viewed, modified, uploaded, downloaded, shared, or synced files is considered an active site.\n\nGET /reports/getOneDriveUsageAccountCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get file counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOneDriveUsageFileCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOneDriveUsageFileCounts(period='D7')"
+									]
+								},
+								"description": "Get the total number of files across all sites and how many are active files. A file is considered active if it has been saved, synced, modified, or shared within the specified time period.\n\nGET /reports/getOneDriveUsageFileCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get storage",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getOneDriveUsageStorage(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getOneDriveUsageStorage(period='D7')"
+									]
+								},
+								"description": "Get the trend on the amount of storage you are using in OneDrive for Business.\n\nGET /reports/getOneDriveUsageStorage(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the OneDrive usage reports to gain a high-level view of the value you are getting from OneDrive in terms of the total number of files and storage used across all the OneDrive accounts in your organization. You can then drill down to understand the trends of active OneDrive accounts, how many files users have interacted with, and how much storage is used. These reports can also give you the details per OneDrive account.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": " SharePoint activity",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointActivityUserDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointActivityUserDetail(period='D7')"
+									]
+								},
+								"description": "Get details about SharePoint activity by user.\n\nGET /reports/getSharePointActivityUserDetail(period='{period_value}')\nGET /reports/getSharePointActivityUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get file counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointActivityFileCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointActivityFileCounts(period='D7')"
+									]
+								},
+								"description": "Get the number of unique, licensed users who interacted with files stored on SharePoint sites.\n\nGET /reports/getSharePointActivityFileCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointActivityUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointActivityUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the trend in the number of active users. A user is considered active if he or she has executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.\n\nGET /reports/getSharePointActivityUserCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get pages",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointActivityPages(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointActivityPages(period='D7')"
+									]
+								},
+								"description": "Get the number of unique pages visited by users.\n\nGET /reports/getSharePointActivityPages(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the SharePoint activity reports to get the activity of every user licensed to use SharePoint by looking at their interaction with files. You can also look at the level of collaboration going on based on the number of files shared.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": " SharePoint site usage",
+					"item": [
+						{
+							"name": "Get site detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointSiteUsageDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointSiteUsageDetail(period='D7')"
+									]
+								},
+								"description": "Get details about SharePoint site usage.\n\nGET /reports/getSharePointSiteUsageDetail(period='{period_value}')\nGET /reports/getSharePointSiteUsageDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get file counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointSiteUsageFileCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointSiteUsageFileCounts(period='D7')"
+									]
+								},
+								"description": "Get the total number of files across all sites and the number of active files. A file (user or system) is considered active if it has been saved, synced, modified, or shared within the specified time period.\n\nGET /reports/getSharePointSiteUsageFileCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get site counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointSiteUsageSiteCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointSiteUsageSiteCounts(period='D7')"
+									]
+								},
+								"description": "Get the total number of files across all sites and the number of active files. A file (user or system) is considered active if it has been saved, synced, modified, or shared within the specified time period.\n\nGET /reports/getSharePointSiteUsageSiteCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get storage",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointSiteUsageStorage(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointSiteUsageStorage(period='D7')"
+									]
+								},
+								"description": "Get the trend of storage allocated and consumed during the reporting period.\n\nGET /reports/getSharePointSiteUsageStorage(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get pages",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSharePointSiteUsagePages(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSharePointSiteUsagePages(period='D7')"
+									]
+								},
+								"description": "Get the number of pages viewed across all sites.\n\nGET /reports/getSharePointSiteUsagePages(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the SharePoint site usage reports to gain a high level view of the value you are getting from SharePoint in terms of the total number of files that users store in SharePoint sites, how many files are actively being used, and the storage consumed across all these sites. Then, you can drill into these reports to understand the trends and per site level details for all sites.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Skype for Business activity",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSkypeForBusinessActivityUserDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSkypeForBusinessActivityUserDetail(period='D7')"
+									]
+								},
+								"description": "Get details about Skype for Business activity by user.\n\nGET /reports/getSkypeForBusinessActivityUserDetail(period='{period_value}')\nGET /reports/getSkypeForBusinessActivityUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get activity counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSkypeForBusinessActivityCounts(period='D30')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSkypeForBusinessActivityCounts(period='D30')"
+									]
+								},
+								"description": "Get details about Skype for Business activity by user.\n\nGET /reports/getSkypeForBusinessActivityUserDetail(period='{period_value}')\nGET /reports/getSkypeForBusinessActivityUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getSkypeForBusinessActivityUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getSkypeForBusinessActivityUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the trends on how many unique users organized and participated in conference sessions held in your organization through Skype for Business. The report also includes the number of peer-to-peer sessions.\n\nGET /reports/getSkypeForBusinessActivityUserCounts(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the Skype for Business activity reports to get details on activity across your organization. These details can help you investigate, plan, and make other business decisions for your organization.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Yammer Activity ",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getTeamsDeviceUsageUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getTeamsDeviceUsageUserCounts(period='D7')"
+									]
+								},
+								"description": "Get details about Yammer activity by user.\n\nGET /reports/getYammerActivityUserDetail(period='{period_value}')\nGET /reports/getYammerActivityUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerActivityUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerActivityUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the trends on the number of unique users who posted, read, and liked Yammer messages."
+							},
+							"response": []
+						},
+						{
+							"name": "Get activity counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerActivityCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerActivityCounts(period='D7')"
+									]
+								},
+								"description": "Get the trends on the amount of Yammer activity in your organization by how many messages were posted, read, and liked."
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the Yammer activity reports to understand the level of your organization's engagement with Yammer by seeing how much activity is generated across the organization and the number of unique users who post, like, and read messages on Yammer.\r\n\r\nNote: For details about different report views and names, see Office 365 Reports - Yammer Activity.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": " Yammer device usage",
+					"item": [
+						{
+							"name": "Get user detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerDeviceUsageUserDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerDeviceUsageUserDetail(period='D7')"
+									]
+								},
+								"description": "Get details about Yammer device usage by user.\n\nGET /reports/getYammerDeviceUsageUserDetail(period='{period_value}')\nGET /reports/getYammerDeviceUsageUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get distribution user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerDeviceUsageDistributionUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerDeviceUsageDistributionUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the number of users by device type.\n\nGET /reports/getYammerDeviceUsageDistributionUserCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get user counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerDeviceUsageUserCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerDeviceUsageUserCounts(period='D7')"
+									]
+								},
+								"description": "Get the number of users by device type.\n\nGET /reports/getYammerDeviceUsageDistributionUserCounts(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "The device usage reports for Yammer give you information about which devices your users utilize to engage on Yammer. You can view the number of users by device type over a selected time period and view details by user.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Yammer groups activity",
+					"item": [
+						{
+							"name": "Get group detail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerGroupsActivityDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerGroupsActivityDetail(period='D7')"
+									]
+								},
+								"description": "Get details about Yammer device usage by user.\n\nGET /reports/getYammerDeviceUsageUserDetail(period='{period_value}')\nGET /reports/getYammerDeviceUsageUserDetail(date={date_value})"
+							},
+							"response": []
+						},
+						{
+							"name": "Get group counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerGroupsActivityGroupCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerGroupsActivityGroupCounts(period='D7')"
+									]
+								},
+								"description": "Get the total number of groups that existed and how many included group conversation activity.\n\nGET /reports/getYammerGroupsActivityGroupCounts(period='{period_value}')"
+							},
+							"response": []
+						},
+						{
+							"name": "Get activity counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getYammerGroupsActivityCounts(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getYammerGroupsActivityCounts(period='D7')"
+									]
+								},
+								"description": "Get the number of Yammer messages posted, read, and liked in groups.\n\nGET /reports/getYammerGroupsActivityCounts(period='{period_value}')"
+							},
+							"response": []
+						}
+					],
+					"description": "You can use the Yammer groups activity reports to gain insights into the activity of Yammer groups in your organization and see how many Yammer groups are being created and used.",
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Subscribed SKU",
+					"item": [
+						{
+							"name": "List subscribedSkus",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/subscribedSkus",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"subscribedSkus"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get subscribedSku",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/subscribedSkus",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"subscribedSkus"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "z_Other",
+					"item": [
+						{
+							"name": "List Users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/users",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get TeamsDeviceUsage",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/groups?$orderby=displayName",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "displayName"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Teams Device Usage User Counts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/groups?$orderby=displayName",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "displayName"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetMailboxUsageDetail",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFhLWEtVUZUcnhJYVNYV2dTR0xOejFTVXhBOEZ2UFVFWWRQcnVzMmQ0MEEiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFQY3R3X29kdlJPb0VOZzNWb09sSWgydGlFcyIsImtpZCI6ImFQY3R3X29kdlJPb0VOZzNWb09sSWgydGlFcyJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20vIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjI2NTM4MmYtMjUwNi00Zjc4LWI1ZjgtNGVmMzVjNDQ5OTY4LyIsImlhdCI6MTU3MDc5MTAyOCwibmJmIjoxNTcwNzkxMDI4LCJleHAiOjE1NzA3OTQ5MjgsImFpbyI6IjQyVmdZT0M4dm5Bem81RHA5ZGt1YXc4SzJMbXJBQUE9IiwiYXBwX2Rpc3BsYXluYW1lIjoiSmF2YSBHcmFwaCBUdXRvcmlhbCIsImFwcGlkIjoiNTIzOGUxMWMtNDE4OS00YjgxLTkwMTUtYzM1MzViY2Y2NTUxIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvNjI2NTM4MmYtMjUwNi00Zjc4LWI1ZjgtNGVmMzVjNDQ5OTY4LyIsIm9pZCI6ImUxMjllNDFmLWQyNDItNGJjZS1iNzQxLTdjNmQ1OTIxODgzMSIsInJvbGVzIjpbIlJlcG9ydHMuUmVhZC5BbGwiXSwic3ViIjoiZTEyOWU0MWYtZDI0Mi00YmNlLWI3NDEtN2M2ZDU5MjE4ODMxIiwidGlkIjoiNjI2NTM4MmYtMjUwNi00Zjc4LWI1ZjgtNGVmMzVjNDQ5OTY4IiwidXRpIjoiTFNmMzJYeGNZMFdRUEpCNFJKRmFBQSIsInZlciI6IjEuMCIsInhtc190Y2R0IjoxNTY4ODc3Mzg4fQ.gytTgG_Ge2ycS_Rk-fXxrQwnn9pvgHXmkHHXBpkNifgY5spCKYS0FxOEyvtQwmOf-aP3t2QI8ct8MGFwo_IBp3gB-psQfvbuwFB4ZzpQIBGOLqeTJPl8944q9w3UAUU1VRKnsyRlKVrsWrtzRzZ5KGiVLrpRSy1RTHZzLPhijq83GuDys6Mz1ZqIcLRnyFyWAll8JKnnp4GjAUcelohqDlL0VIpQvZ7c8Ucsl58BIDqVT4ozHzregGnR8UhThDhXy7fuaz2KLAE7mVIXWdTEG9_XK9PSUKS8ZW-W0wKXzYoAMYCFcnlnHAUQ93f7ikTlyPbXBX1vaOk76dYJfmtVAA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/octet-stream",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/reports/getMailboxUsageDetail(period='D7')",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"reports",
+										"getMailboxUsageDetail(period='D7')"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Groups",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/groups?$orderby=displayName",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "displayName"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Alerts",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/security/alerts",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"security",
+										"alerts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List People",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{graphBearerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/groups?$orderby=displayName",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"groups"
+									],
+									"query": [
+										{
+											"key": "$orderby",
+											"value": "displayName"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Access Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1206aa9a-9a27-43b8-be13-272701113a50",
+						"exec": [
+							"pm.test(pm.info.requestName,() => {\r",
+							"\tpm.response.to.not.be.error;\r",
+							"\tpm.response.to.not.have.jsonBody('error');\r",
+							"});\r",
+							"pm.globals.set(\"graphBearerToken\", pm.response.json().access_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{graphClientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{graphClientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "https://graph.microsoft.com/",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.windows.net/{{graphTenantId}}/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"windows",
+						"net"
+					],
+					"path": [
+						"{{graphTenantId}}",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

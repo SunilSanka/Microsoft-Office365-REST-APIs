@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "942a96a0-c9e7-4259-9c43-37d241b67e8a",
+		"name": "Office 365 License",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86bf5356-6d49-4ac6-94f0-1cd4a8a18d3b",
+						"exec": [
+							"pm.test(pm.info.requestName,() => {\r",
+							"\tpm.response.to.not.be.error;\r",
+							"\tpm.response.to.not.have.jsonBody('error');\r",
+							"});\r",
+							"pm.globals.set(\"graphBearerToken\", pm.response.json().access_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{graphClientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{graphClientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "https://graph.windows.net",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/{{graphTenantId}}/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"{{graphTenantId}}",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LicenseDetailService",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{graphBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://graph.microsoft.com/v1.0/subscribedSkus",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"v1.0",
+						"subscribedSkus"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "df509d3b-6aab-436c-9ce1-38eaa678cc05",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "64862d2a-1dd3-4f97-becd-756711dfcd55",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

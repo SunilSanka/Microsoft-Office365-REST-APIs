@@ -1,0 +1,645 @@
+{
+	"info": {
+		"_postman_id": "28a11890-370e-4657-b553-b0cfad8e2577",
+		"name": "Office 365",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Access Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "86bf5356-6d49-4ac6-94f0-1cd4a8a18d3b",
+						"exec": [
+							"\r",
+							"pm.test(pm.info.requestName,() => {\r",
+							"\tpm.response.to.not.be.error;\r",
+							"\tpm.response.to.not.have.jsonBody('error');\r",
+							"});\r",
+							"pm.globals.set(\"serviceBearerToken\", pm.response.json().access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{serviceClientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{serviceClientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "https://manage.office.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/{{serviceTenantId}}/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"{{serviceTenantId}}",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Services",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/ServiceComms/Services/",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"ServiceComms",
+						"Services",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CurrentStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://manage.office.com:443/api/v1.0/{{serviceTenantId}}/ServiceComms/CurrentStatus?$select=Id,Status,IncidentIds\n",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"ServiceComms",
+						"CurrentStatus"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "Id,Status,IncidentIds\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CurrentStatus Full",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://manage.office.com:443/api/v1.0/{{serviceTenantId}}/ServiceComms/CurrentStatus",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"ServiceComms",
+						"CurrentStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HistoricalStatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/ServiceComms/HistoricalStatus",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"ServiceComms",
+						"HistoricalStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Messages",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/ServiceComms/Messages?select=StartTime,EndTime,Severity,MessageType,Id,Workload,Status,Title.Impact,Description,LastUpdatedTime,Messages",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"ServiceComms",
+						"Messages"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "StartTime,EndTime,Severity,MessageType,Id,Workload,Status,Title.Impact,Description,LastUpdatedTime,Messages"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Messages Full",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/ServiceComms/Messages",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"ServiceComms",
+						"Messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Subsctiption AzureActiveDirectory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/activity/feed/subscriptions/start?contentType=Audit.AzureActiveDirectory&PublisherIdentifier=6265382f-2506-4f78-b5f8-4ef35c449968",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"activity",
+						"feed",
+						"subscriptions",
+						"start"
+					],
+					"query": [
+						{
+							"key": "contentType",
+							"value": "Audit.AzureActiveDirectory"
+						},
+						{
+							"key": "PublisherIdentifier",
+							"value": "6265382f-2506-4f78-b5f8-4ef35c449968"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Subscriptions Exchange",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/activity/feed/subscriptions/start?contentType=Audit.Exchange&PublisherIdentifier=6265382f-2506-4f78-b5f8-4ef35c449968",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"activity",
+						"feed",
+						"subscriptions",
+						"start"
+					],
+					"query": [
+						{
+							"key": "contentType",
+							"value": "Audit.Exchange"
+						},
+						{
+							"key": "PublisherIdentifier",
+							"value": "6265382f-2506-4f78-b5f8-4ef35c449968"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Subscription SharePoint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/activity/feed/subscriptions/start?contentType=Audit.SharePoint&PublisherIdentifier=6265382f-2506-4f78-b5f8-4ef35c449968",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"activity",
+						"feed",
+						"subscriptions",
+						"start"
+					],
+					"query": [
+						{
+							"key": "contentType",
+							"value": "Audit.SharePoint"
+						},
+						{
+							"key": "PublisherIdentifier",
+							"value": "6265382f-2506-4f78-b5f8-4ef35c449968"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Subscription General",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/activity/feed/subscriptions/start?contentType=Audit.General&PublisherIdentifier=6265382f-2506-4f78-b5f8-4ef35c449968",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"activity",
+						"feed",
+						"subscriptions",
+						"start"
+					],
+					"query": [
+						{
+							"key": "contentType",
+							"value": "Audit.General"
+						},
+						{
+							"key": "PublisherIdentifier",
+							"value": "6265382f-2506-4f78-b5f8-4ef35c449968"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start DLP All",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "a",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/activity/feed/subscriptions/start?contentType=DLP.All&PublisherIdentifier=6265382f-2506-4f78-b5f8-4ef35c449968",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"activity",
+						"feed",
+						"subscriptions",
+						"start"
+					],
+					"query": [
+						{
+							"key": "contentType",
+							"value": "DLP.All"
+						},
+						{
+							"key": "PublisherIdentifier",
+							"value": "6265382f-2506-4f78-b5f8-4ef35c449968"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get AzureActiveDirectory",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/activity/feed/subscriptions/content?contentType=Audit.AzureActiveDirectory",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"activity",
+						"feed",
+						"subscriptions",
+						"content"
+					],
+					"query": [
+						{
+							"key": "contentType",
+							"value": "Audit.AzureActiveDirectory"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Excahange",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{serviceBearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://manage.office.com/api/v1.0/{{serviceTenantId}}/activity/feed/subscriptions/content?contentType=Audit.Exchange",
+					"protocol": "https",
+					"host": [
+						"manage",
+						"office",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1.0",
+						"{{serviceTenantId}}",
+						"activity",
+						"feed",
+						"subscriptions",
+						"content"
+					],
+					"query": [
+						{
+							"key": "contentType",
+							"value": "Audit.Exchange"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

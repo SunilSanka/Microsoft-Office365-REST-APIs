@@ -1,0 +1,552 @@
+{
+	"info": {
+		"_postman_id": "bfe7cb44-5cce-4d49-984e-214a975985d3",
+		"name": "Azure Rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Resource Groups 1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{bearerToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourcegroups?api-version=2017-05-10",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions",
+						"{{subscriptionId}}",
+						"resourcegroups"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2017-05-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Resource Groups 2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjQzOTAyMjksIm5iZiI6MTU2NDM5MDIyOSwiZXhwIjoxNTY0Mzk0MTI5LCJhaW8iOiI0MkZnWU1qL3J1ZDBMNmFaNlJjVDV6OGY0d0lkQUE9PSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6IktTVmwzTmtFSEUycm8zUXBmZmRFQUEiLCJ2ZXIiOiIxLjAifQ.XUjx7lhC2rVfvC-9DxRhdgmMQURTNrmJB-paVN8ISjCnh1RzY15xOGZhk4r2Xu8KfqCezfOkYjoru_rZPD0CeR2gHqMXg7ZJZfW8uZDe_v3LPbnG-1U-s57OLSXgYmpQFZVCAlBYxyj92dIbMH0bd1i1UfOk9ov0cDvazyFGF70Eym8DrHzaNqQc4SxXnv9l6cdF-cqC28Rc85vc91OIP0nnycjQ_3jfn3lEzh7RvY8rcT1RPQI8b96cC646PXdT1pRuHtPPX1KjcZTjIcHDz8FxV6t_I1tdyy6RY39B69GlXk3VUTuDg7yzRA3JpkUuTk7XnTle3gepGjhOPb5IaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourcegroups?api-version=2017-05-10",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions",
+						"{{subscriptionId}}",
+						"resourcegroups"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2017-05-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get AAD Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "{{resource}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.microsoftonline.com/{{tenantId}}/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"microsoftonline",
+						"com"
+					],
+					"path": [
+						"{{tenantId}}",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sites",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjQzOTAyMjksIm5iZiI6MTU2NDM5MDIyOSwiZXhwIjoxNTY0Mzk0MTI5LCJhaW8iOiI0MkZnWU1qL3J1ZDBMNmFaNlJjVDV6OGY0d0lkQUE9PSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6IktTVmwzTmtFSEUycm8zUXBmZmRFQUEiLCJ2ZXIiOiIxLjAifQ.XUjx7lhC2rVfvC-9DxRhdgmMQURTNrmJB-paVN8ISjCnh1RzY15xOGZhk4r2Xu8KfqCezfOkYjoru_rZPD0CeR2gHqMXg7ZJZfW8uZDe_v3LPbnG-1U-s57OLSXgYmpQFZVCAlBYxyj92dIbMH0bd1i1UfOk9ov0cDvazyFGF70Eym8DrHzaNqQc4SxXnv9l6cdF-cqC28Rc85vc91OIP0nnycjQ_3jfn3lEzh7RvY8rcT1RPQI8b96cC646PXdT1pRuHtPPX1KjcZTjIcHDz8FxV6t_I1tdyy6RY39B69GlXk3VUTuDg7yzRA3JpkUuTk7XnTle3gepGjhOPb5IaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/caapm/providers/Microsoft.Web/sites?api-version=2018-02-01",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions",
+						"{{subscriptionId}}",
+						"resourceGroups",
+						"caapm",
+						"providers",
+						"Microsoft.Web",
+						"sites"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-02-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Azure VM",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjQzOTAyMjksIm5iZiI6MTU2NDM5MDIyOSwiZXhwIjoxNTY0Mzk0MTI5LCJhaW8iOiI0MkZnWU1qL3J1ZDBMNmFaNlJjVDV6OGY0d0lkQUE9PSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6IktTVmwzTmtFSEUycm8zUXBmZmRFQUEiLCJ2ZXIiOiIxLjAifQ.XUjx7lhC2rVfvC-9DxRhdgmMQURTNrmJB-paVN8ISjCnh1RzY15xOGZhk4r2Xu8KfqCezfOkYjoru_rZPD0CeR2gHqMXg7ZJZfW8uZDe_v3LPbnG-1U-s57OLSXgYmpQFZVCAlBYxyj92dIbMH0bd1i1UfOk9ov0cDvazyFGF70Eym8DrHzaNqQc4SxXnv9l6cdF-cqC28Rc85vc91OIP0nnycjQ_3jfn3lEzh7RvY8rcT1RPQI8b96cC646PXdT1pRuHtPPX1KjcZTjIcHDz8FxV6t_I1tdyy6RY39B69GlXk3VUTuDg7yzRA3JpkUuTk7XnTle3gepGjhOPb5IaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/caapm/providers/Microsoft.Compute/virtualMachines?api-version=2018-06-01",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions",
+						"{{subscriptionId}}",
+						"resourceGroups",
+						"caapm",
+						"providers",
+						"Microsoft.Compute",
+						"virtualMachines"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-06-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Azure VM Instance View",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjQzOTAyMjksIm5iZiI6MTU2NDM5MDIyOSwiZXhwIjoxNTY0Mzk0MTI5LCJhaW8iOiI0MkZnWU1qL3J1ZDBMNmFaNlJjVDV6OGY0d0lkQUE9PSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6IktTVmwzTmtFSEUycm8zUXBmZmRFQUEiLCJ2ZXIiOiIxLjAifQ.XUjx7lhC2rVfvC-9DxRhdgmMQURTNrmJB-paVN8ISjCnh1RzY15xOGZhk4r2Xu8KfqCezfOkYjoru_rZPD0CeR2gHqMXg7ZJZfW8uZDe_v3LPbnG-1U-s57OLSXgYmpQFZVCAlBYxyj92dIbMH0bd1i1UfOk9ov0cDvazyFGF70Eym8DrHzaNqQc4SxXnv9l6cdF-cqC28Rc85vc91OIP0nnycjQ_3jfn3lEzh7RvY8rcT1RPQI8b96cC646PXdT1pRuHtPPX1KjcZTjIcHDz8FxV6t_I1tdyy6RY39B69GlXk3VUTuDg7yzRA3JpkUuTk7XnTle3gepGjhOPb5IaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/caapm/providers/Microsoft.Compute/virtualMachines/sansu07-vm01/instanceView?api-version=2018-06-01",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions",
+						"{{subscriptionId}}",
+						"resourceGroups",
+						"caapm",
+						"providers",
+						"Microsoft.Compute",
+						"virtualMachines",
+						"sansu07-vm01",
+						"instanceView"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-06-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NGINX Get Azure VM Instance View",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "apikey",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjQ0ODI5MTUsIm5iZiI6MTU2NDQ4MjkxNSwiZXhwIjoxNTY0NDg2ODE1LCJhaW8iOiI0MkZnWUloSStqbnA4YXRlMjJ1bEt3UG14Yno3RGdBPSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6Ii1KVkRfUmhpNlVXMVRGT0V0ZTRSQUEiLCJ2ZXIiOiIxLjAifQ.k8RakE5J35ga_LYr_a3j87WZ3U9ALsGmzAtMZkqgQsjC6gR5i9K3fn71fuRvoPR061j_pkhRl0A4zkqUvHPEhsqckhGQQTC3Rch653htk2C5e4AKB5_UgnlkBi3wqx5ZLXsyFixJJbXeIxfRIiZRGjQEmyDE-dq4TqPI3hpMdtzV-4dNwgvDqCmGUVQhDG9dz7iDnJzNr9qU3YXJD_Bj1LeI9mLM02_hkTbPSDhMRV65yDjoTFKycoH3_xqY36Jyn7xp0hhvP7bbH971PN4h1H0bulh9LHT4JleG8-63ATCL5YCdGwmcghyVP82XHEXItEF3VhxGPvlIAyjED3Ggtg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:1234/subscriptions/d7659919-4f77-4710-91d9-fd2f512ea284/resourceGroups/caapm/providers/Microsoft.Compute/virtualMachines/sansu07-vm01/instanceView?api-version=2018-06-01",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"subscriptions",
+						"d7659919-4f77-4710-91d9-fd2f512ea284",
+						"resourceGroups",
+						"caapm",
+						"providers",
+						"Microsoft.Compute",
+						"virtualMachines",
+						"sansu07-vm01",
+						"instanceView"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-06-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HTTPS SelfSigned",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "{{resource}}",
+							"type": "text"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://10.17.164.27:8088/{{tenantId}}/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"10",
+						"17",
+						"164",
+						"27"
+					],
+					"port": "8088",
+					"path": [
+						"{{tenantId}}",
+						"oauth2",
+						"token"
+					],
+					"query": [
+						{
+							"key": "Content-Length",
+							"value": "2048",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SSL NGINX Get Azure VM Instance View Copy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjUyODk2NDgsIm5iZiI6MTU2NTI4OTY0OCwiZXhwIjoxNTY1MjkzNTQ4LCJhaW8iOiI0MkZnWUpDMldWVnU4cURzQm0vY2dSc0prbjhFQUE9PSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6IjhHQVFRZjJ5ajBlSGg5cnp2ZzhDQUEiLCJ2ZXIiOiIxLjAifQ.i1JrlK_GZylEDDs0NI-6xMJUyn9lH53NMOWeUJygoLcdQmVv7UaxNWbKl8Z2EOcmLDSEaCUNLBDbdYlshvZmduHYN4kt4L6R1EiHOb5t3Z7342Wvofy1fVfzaTsK2vKy7g4T-1oObS-Xdm61zcteOHjtdxtHPOHjijtX6zkRj9ChHRoY95G7_hprr0M66Y7QBWkloJIFLVrjfVX7Y9JDNMGSRQSCpz3dpnGUyZikK4oMxMk2cCBM4JCdFWqpJNbUeCjOKyL-PCkKFkK1qZwqtHR9HyYAsKNeomplxPZfmGJhbzVjy4CXwuqHlBN9Qql7yoiS0_73u0_WD6XsX4gP-g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "apikey",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjUxNzMwNjUsIm5iZiI6MTU2NTE3MzA2NSwiZXhwIjoxNTY1MTc2OTY1LCJhaW8iOiI0MkZnWUVqMVBKcjZ5MFRpNmF6Q0p4Ry9ubGs4QkFBPSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6IlFKRGJVWEtRZ2syUnNCVndhLTZlQUEiLCJ2ZXIiOiIxLjAifQ.S4FMMwSsldWnDE8HC7ty-tlvoEBNmiznWxb-3Pl3bRB0ZcB1VUio1GmBtcU1pt1fdeo7iKJzAHWQILMpldVc_yEpDGkIB6aCSQpEOQtQqDbcKNMOWBMwXHV59p5xcvc2qXCQb7fi0ORukpVsBfHu_7FLndqboOD1LEn8_zNQshVfA4rFXHq9BEAYnubqLNsCCtSldciYq9wmRU72RhgJtY_H9eduBcjxhIIk8Hgml9Z6ydY0iK1-27CSTUvYWgg4kI-o3_xXfFymoV-j4zJeXXjFAHXfKvGnxpgQjmtcpB2VyXzipG31TOCiBoyMQjmtdrIQVsk-829Pe5UQWhhgGA"
+					}
+				],
+				"url": {
+					"raw": "https://10.17.164.27:443/subscriptions/d7659919-4f77-4710-91d9-fd2f512ea284/resourceGroups/caapm/providers/Microsoft.Compute/virtualMachines/sansu07-vm01/instanceView?api-version=2018-06-01",
+					"protocol": "https",
+					"host": [
+						"10",
+						"17",
+						"164",
+						"27"
+					],
+					"port": "443",
+					"path": [
+						"subscriptions",
+						"d7659919-4f77-4710-91d9-fd2f512ea284",
+						"resourceGroups",
+						"caapm",
+						"providers",
+						"Microsoft.Compute",
+						"virtualMachines",
+						"sansu07-vm01",
+						"instanceView"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-06-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MetricDefinitions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSIsImtpZCI6InU0T2ZORlBId0VCb3NIanRyYXVPYlY4NExuWSJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OS8iLCJpYXQiOjE1NjQzOTAyMjksIm5iZiI6MTU2NDM5MDIyOSwiZXhwIjoxNTY0Mzk0MTI5LCJhaW8iOiI0MkZnWU1qL3J1ZDBMNmFaNlJjVDV6OGY0d0lkQUE9PSIsImFwcGlkIjoiODVlNTRhZDItMGM2Yi00ZmQwLTg3NjctNjYwY2ZhOWJjZTNlIiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMTE5NGRmMTYtM2FlMC00OWFhLWI0OGItNWM0ZGE2ZTEzNjg5LyIsIm9pZCI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInN1YiI6IjgzNDM3YzI3LTc2NmUtNDA4NC04OThkLTIxZDFhMmY2MTQ2ZCIsInRpZCI6IjExOTRkZjE2LTNhZTAtNDlhYS1iNDhiLTVjNGRhNmUxMzY4OSIsInV0aSI6IktTVmwzTmtFSEUycm8zUXBmZmRFQUEiLCJ2ZXIiOiIxLjAifQ.XUjx7lhC2rVfvC-9DxRhdgmMQURTNrmJB-paVN8ISjCnh1RzY15xOGZhk4r2Xu8KfqCezfOkYjoru_rZPD0CeR2gHqMXg7ZJZfW8uZDe_v3LPbnG-1U-s57OLSXgYmpQFZVCAlBYxyj92dIbMH0bd1i1UfOk9ov0cDvazyFGF70Eym8DrHzaNqQc4SxXnv9l6cdF-cqC28Rc85vc91OIP0nnycjQ_3jfn3lEzh7RvY8rcT1RPQI8b96cC646PXdT1pRuHtPPX1KjcZTjIcHDz8FxV6t_I1tdyy6RY39B69GlXk3VUTuDg7yzRA3JpkUuTk7XnTle3gepGjhOPb5IaA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://management.azure.com/subscriptions/{{subscriptionId}}/resourceGroups/caapm/providers/Microsoft.Compute/virtualMachines/sansu07-vm01/instanceView?api-version=2018-06-01",
+					"protocol": "https",
+					"host": [
+						"management",
+						"azure",
+						"com"
+					],
+					"path": [
+						"subscriptions",
+						"{{subscriptionId}}",
+						"resourceGroups",
+						"caapm",
+						"providers",
+						"Microsoft.Compute",
+						"virtualMachines",
+						"sansu07-vm01",
+						"instanceView"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "2018-06-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HTTP Basic Authentication",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{clientId}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{clientSecret}}",
+							"type": "text"
+						},
+						{
+							"key": "resource",
+							"value": "{{resource}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://10.17.164.27:443/{{tenantId}}/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"10",
+						"17",
+						"164",
+						"27"
+					],
+					"port": "443",
+					"path": [
+						"{{tenantId}}",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
